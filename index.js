@@ -7,7 +7,7 @@ module.exports.setRecord = (req, res) => {
   const authorised = req.body.password === process.env.CLOUDFLARE_PROXY_PASSWORD;
 
   if (!authorised) {
-    res.code(401).end();
+    res.status(401).end();
   } else {
     setDnsRecord(
       process.env.CLOUDFLARE_ZONE_ID,
