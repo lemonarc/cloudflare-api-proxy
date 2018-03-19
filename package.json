@@ -1,0 +1,20 @@
+{
+  "name": "cloudflare-api-proxy",
+  "version": "1.0.0",
+  "description": "Basic HTTP API for modifying cloudflare records.",
+  "main": "index.js",
+  "dependencies": {
+    "cloudflare": "^2.4.1",
+    "dotenv": "^5.0.1"
+  },
+  "devDependencies": {
+    "@google-cloud/functions-emulator": "^1.0.0-beta.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "functions": "functions",
+    "deploy": "gcloud beta functions deploy --entry-point setRecord --trigger-http --source=$(pwd)"
+  },
+  "author": "Leon Aves",
+  "license": "ISC"
+}
